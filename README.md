@@ -28,6 +28,34 @@ Calculate reading time with 400 words per minute:
 
     Estimated reading time: [readingtime 400] minutes.
 
+Blog page layout to automatically show an estimated reading time:
+
+```
+<?php $this->yellow->layout("header") ?>
+<div class="content">
+<div class="main" role="main">
+<?php $this->yellow->page->set("entryClass", "entry") ?>
+<?php if ($this->yellow->page->isExisting("tag")): ?>
+<?php foreach (preg_split("/\s*,\s*/", $this->yellow->page->get("tag")) as $tag) { $this->yellow->page->set("entryClass", $this->yellow->page->get("entryClass")." tag-".$this->yellow->lookup->normaliseArguments($tag, false)); } ?>
+<?php endif ?>
+<div class="<?php echo $this->yellow->page->getHtml("entryClass") ?>">
+<div class="entry-title"><h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1></div>
+<div class="entry-meta"><p><?php echo $this->yellow->page->getDateHtml("published") ?> <?php echo $this->yellow->language->getTextHtml("blogBy") ?> <?php $authorCounter = 0; foreach (preg_split("/\s*,\s*/", $this->yellow->page->get("author")) as $author) { if (++$authorCounter>1) echo ", "; echo "<a href=\"".$this->yellow->page->getPage("blogStart")->getLocation(true).$this->yellow->lookup->normaliseArguments("author:$author")."\">".htmlspecialchars($author)."</a>"; } ?> | <?php echo $page->parseContentShortcut("readingtime", "", "inline"); ?> minutes</p></div>
+<div class="entry-content"><?php echo $this->yellow->page->getContentHtml() ?></div>
+<?php echo $this->yellow->page->getExtraHtml("profile") ?>
+<?php echo $this->yellow->page->getExtraHtml("link") ?>
+<?php if ($this->yellow->page->isExisting("tag")): ?>
+<div class="entry-tags">
+<p><?php echo $this->yellow->language->getTextHtml("blogTag") ?> <?php $tagCounter = 0; foreach (preg_split("/\s*,\s*/", $this->yellow->page->get("tag")) as $tag) { if (++$tagCounter>1) echo ", "; echo "<a href=\"".$this->yellow->page->getPage("blogStart")->getLocation(true).$this->yellow->lookup->normaliseArguments("tag:$tag")."\">".htmlspecialchars($tag)."</a>"; } ?></p>
+</div>
+<?php endif ?>
+<?php echo $this->yellow->page->getExtraHtml("comment") ?>
+</div>
+</div>
+</div>
+<?php $this->yellow->layout("footer") ?>
+```
+
 ## Settings
 
 The following setting can be configured in file `system/extensions/yellow-system.ini`:
