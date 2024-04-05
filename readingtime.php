@@ -2,7 +2,7 @@
 // Readingtime extension, https://github.com/schulle4u/yellow-readingtime
 
 class YellowReadingtime {
-    const VERSION = "0.8.22";
+    const VERSION = "0.9.1";
     public $yellow;         // access to API
     
     // Handle initialisation
@@ -11,8 +11,8 @@ class YellowReadingtime {
         $this->yellow->system->setDefault("readingtimeWordsPerMinute", "250");
     }
     
-    // Handle page content of shortcut
-    public function onParseContentShortcut($page, $name, $text, $type) {
+    // Handle page content element
+    public function onParseContentElement($page, $name, $text, $attributes, $type) {
         $output = null;
         if ($name=="readingtime" && ($type=="inline")) {
             list($wordsPerMinute) = $this->yellow->toolbox->getTextArguments($text);

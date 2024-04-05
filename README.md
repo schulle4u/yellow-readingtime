@@ -1,6 +1,6 @@
 <p align="right"><a href="README-de.md">Deutsch</a> &nbsp; <a href="README.md">English</a></p>
 
-# Readingtime 0.8.22
+# Readingtime 0.9.1
 
 Show estimated reading time for page content.
 
