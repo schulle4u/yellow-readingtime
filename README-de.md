@@ -40,7 +40,7 @@ Blogseiten-Layout um die ungefähre Lesezeit automatisch anzuzeigen:
 <?php endif ?>
 <div class="<?php echo $this->yellow->page->getHtml("entryClass") ?>">
 <div class="entry-title"><h1><?php echo $this->yellow->page->getHtml("titleContent") ?></h1></div>
-<div class="entry-meta"><p><?php echo $this->yellow->page->getDateHtml("published") ?> <?php echo $this->yellow->language->getTextHtml("blogBy") ?> <?php $authorCounter = 0; foreach (preg_split("/\s*,\s*/", $this->yellow->page->get("author")) as $author) { if (++$authorCounter>1) echo ", "; echo "<a href=\"".$this->yellow->page->getPage("blogStart")->getLocation(true).$this->yellow->lookup->normaliseArguments("author:$author")."\">".htmlspecialchars($author)."</a>"; } ?> | <?php echo $this->yellow->page->parseContentShortcut("readingtime", "", "inline"); ?> Minuten</p></div>
+<div class="entry-meta"><p><?php echo $this->yellow->page->getDateHtml("published") ?> <?php echo $this->yellow->language->getTextHtml("blogBy") ?> <?php $authorCounter = 0; foreach (preg_split("/\s*,\s*/", $this->yellow->page->get("author")) as $author) { if (++$authorCounter>1) echo ", "; echo "<a href=\"".$this->yellow->page->getPage("blogStart")->getLocation(true).$this->yellow->lookup->normaliseArguments("author:$author")."\">".htmlspecialchars($author)."</a>"; } ?> | <?php echo $this->yellow->page->parseContentElement("readingtime", "", "", "inline"); ?> Minuten</p></div>
 <div class="entry-content"><?php echo $this->yellow->page->getContentHtml() ?></div>
 <?php echo $this->yellow->page->getExtraHtml("profile") ?>
 <?php echo $this->yellow->page->getExtraHtml("link") ?>
