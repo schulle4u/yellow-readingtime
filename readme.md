@@ -1,8 +1,6 @@
-<p align="right"><a href="readme-de.md">Deutsch</a> &nbsp; <a href="readme.md">English</a></p>
-
 # Readingtime 0.9.1
 
-Show estimated reading time for page content.
+Show estimated reading time for page content. Developed by Steffen Schultz.
 
 <p align="center"><img src="screenshot.png" alt="Screenshot"></p>
 
@@ -66,6 +64,4 @@ The following setting can be configured in file `system/extensions/yellow-system
 
 Thanks to the Datenstrom Yellow community for help and feedback!
 
-## Developer
-
-Steffen Schultz. [Get help](https://datenstrom.se/yellow/help/).
+Do you have questions? [Get help](https://datenstrom.se/yellow/help/).

@@ -1,8 +1,6 @@
-<p align="right"><a href="readme-de.md">Deutsch</a> &nbsp; <a href="readme.md">English</a></p>
-
 # Readingtime 0.9.1
 
-Zeigt die geschätzte Lesezeit für den Seiteninhalt an.
+Zeigt die geschätzte Lesezeit für den Seiteninhalt an. Entwickelt von Steffen Schultz.
 
 <p align="center"><img src="screenshot.png" alt="Bildschirmfoto"></p>
 
@@ -66,6 +64,4 @@ Die folgende Einstellung kann in der Datei `system/extensions/yellow-system.ini`
 
 Vielen Dank an die Datenstrom-Yellow-Gemeinschaft für Hilfe und Feedback!
 
-## Entwickler
-
-Steffen Schultz. [Hilfe finden](https://datenstrom.se/de/yellow/help/).
+Hast du Fragen? [Hilfe finden](https://datenstrom.se/de/yellow/help/).
